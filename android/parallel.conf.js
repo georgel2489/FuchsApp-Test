@@ -12,28 +12,24 @@ exports.config = {
   commonCapabilities: {
     project: "Fuchs",
     build: 'Fuchs',
-    name: '71.3',
-    app: process.env.BROWSERSTACK_APP_ID || 'bs://7ff66b4491d9bca2a07cecdeaa8427d74153b439',
+    name: '85.3',
+    app: process.env.BROWSERSTACK_APP_ID || 'bs://569e16fb3bfd106bb2b501bb13ca24ff85da8bc3',
     'browserstack.debug': true
   },
 
   capabilities: [
     {
-      device: 'Google Pixel 3',
-      os_version: "9.0"
+      device: 'Samsung Galaxy S21',
+      os_version: "11.0"
     },
-    {
-      device: 'Samsung Galaxy S10e',
-      os_version: "9.0"
-    },
-    {
-      device: 'Google Pixel 3',
-      os_version: "10.0"
-    },
-    {
-      device: 'Samsung Galaxy S20',
-      os_version: "10.0"
-    }
+    // {
+    //   device: 'Samsung Galaxy S20 Ultra',
+    //   os_version: "10.0"
+    // },
+    // {
+    //   device: 'Samsung Galaxy S10e',
+    //   os_version: "9.0"
+    // }
   ],
 
   logLevel: 'info',
@@ -47,7 +43,7 @@ exports.config = {
   framework: 'mocha',
   mochaOpts: {
     ui: 'bdd',
-    timeout: 60000
+    timeout: 120000
   }
 };
 

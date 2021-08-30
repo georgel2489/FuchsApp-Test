@@ -2,6 +2,7 @@ const assert = require('assert');
 
 describe('LOGIN', () => {
   it('login falied', async () => {
+    await browser.reloadSession();
     await browser.pause(3000);
     const intro_button = await $('~intro_button');
     await intro_button.waitForDisplayed({ timeout: 2000 });

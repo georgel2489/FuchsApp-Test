@@ -1,8 +1,36 @@
 const assert = require('assert');
 
-describe('Create Mix', () => {
+describe('CREATE MIX', () => {
     it('create mix', async () => {
+        // await browser.reloadSession();
         await browser.pause(3000);
+        const intro = await $('~intro_button');
+        await intro.waitForDisplayed({ timeout: 2000 });
+        await intro.click();
+
+        const go_profile = await $('~go_profile');
+        await go_profile.waitForDisplayed({ timeout: 2000 });
+        await go_profile.click();
+
+        const email_login = await $('~email_login');
+        await email_login.waitForDisplayed({ timeout: 2000 });
+        await email_login.addValue("fuchs.dev@devrevolution.com");
+
+        const password_login = await $('~password_login');
+        await password_login.waitForDisplayed({ timeout: 2000 });
+        await password_login.addValue("BSI#vf2020DevRev");
+
+        const remember_me = await $('~remember_me');
+        await remember_me.waitForDisplayed({ timeout: 2000 });
+        await remember_me.click();
+
+        const login_button = await $('~login_button');
+        await login_button.waitForDisplayed({ timeout: 3000 });
+        await login_button.click();
+
+        await browser.pause(1000);
+        await browser.dismissAlert();
+
         const intro_button = await $('~Custom');
         await intro_button.waitForDisplayed({ timeout: 2000 });
         await intro_button.click();
@@ -67,6 +95,10 @@ describe('Create Mix', () => {
         await minusW.waitForDisplayed({ timeout: 1000 });
         await minusW.click();
 
+        // const input_weight = await $('~input_weight');
+        // await input_weight.waitForDisplayed({ timeout: 3000 });
+        // await input_weight.click();
+
         const set_weight_continue = await $('~set_weight_continue');
         await set_weight_continue.waitForDisplayed({ timeout: 3000 });
         await set_weight_continue.click();
@@ -79,10 +111,6 @@ describe('Create Mix', () => {
         await mix_public.waitForDisplayed({ timeout: 1000 });
         await mix_public.click();
 
-        // const mix_note = await $('~mix_note');
-        // await mix_note.waitForDisplayed({ timeout: 1000 });
-        // await mix_note.addValue('Test');
-
         const continueM = await $('~continue');
         await continueM.waitForDisplayed({ timeout: 2000 });
         await continueM.click();
@@ -90,6 +118,14 @@ describe('Create Mix', () => {
         const your_mix_title = await $('~your_mix_title');
         await your_mix_title.waitForDisplayed({ timeout: 2000 });
         const exist = await your_mix_title.isExisting();
+
+        // const go_save_mix_qr = await $('~go_save_mix_qr');
+        // await go_save_mix_qr.waitForDisplayed({ timeout: 2000 });
+        // await go_save_mix_qr.click();
+
+        // const save_mix_qr = await $('~save_mix_qr');
+        // await save_mix_qr.waitForDisplayed({ timeout: 2000 });
+        // await save_mix_qr.click();
 
         assert(exist);
     });
