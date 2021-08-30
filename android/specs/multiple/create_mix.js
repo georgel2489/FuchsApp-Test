@@ -2,7 +2,7 @@ const assert = require('assert');
 
 describe('CREATE MIX', () => {
     it('create mix', async () => {
-        // await browser.reloadSession();
+        await browser.reloadSession();
         await browser.pause(3000);
         const intro = await $('~intro_button');
         await intro.waitForDisplayed({ timeout: 2000 });
